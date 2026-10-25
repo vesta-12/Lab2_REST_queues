@@ -1,4 +1,4 @@
-# Lab 2 - Service Requirements Specification
+# Lab 3 - Service Requirements Specification (Version 2)
 
 ## 1. Overview
 
@@ -22,7 +22,8 @@ Example:
 
 ```json
 {
-  "server_time": "2026-10-09 15:47:55.598426"
+  "server_time": "2026-10-25 19:30:00.123456",
+  "served_by": "my-api-container"
 }
 ```
 
