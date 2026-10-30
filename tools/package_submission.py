@@ -29,7 +29,7 @@ def main():
                 'evidence/pytest.txt','evidence/metrics.json'}
     required |= {f'screenshots/{name}' for name in (
         '01_rest_api_200_400_404.png','02_job_queued.png','03_api_logs.png',
-        '04_job_completed.png','05_pytest_41_passed.png')}
+        '04_job_completed.png','05_pytest_41_passed.png','06_job_202_accepted.png')}
     assert required <= set(names)
     fd, temporary = tempfile.mkstemp(prefix='.lab2-submission-',suffix='.zip',dir=DEST.parent)
     os.close(fd)

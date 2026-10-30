@@ -88,8 +88,9 @@ seconds, validates results and sends SIGTERM (exit 0). Nothing remains running.
 Flask test-client measurement, not a network or production benchmark.
 
 ## Evidence and screenshots
-Five student-supplied terminal screenshots from 30 October 2026 are included in
-screenshots/ and in the two-page report.pdf. Images were copied without editing;
+Six student-supplied terminal screenshots from 30 October 2026 are included in
+screenshots/. Images 01-05 also appear in the unchanged two-page report.pdf;
+image 06 adds the direct client response for HTTP 202 with a JSON job_id. Images were copied without editing;
 source names and hashes are recorded in evidence/screenshot-manifest.json.
 They show REST success/errors, the same UUID queued and done, Flask request logs
 (including POST /jobs 202), and 41 passed in 30.36s on the student's machine.
@@ -99,9 +100,9 @@ The final independent rerun in evidence/pytest.txt reports 41 passed in 30.34s,
 in evidence/pytest-initial.txt and evidence/metrics-initial.json. Actual network
 experiment output remains in evidence/http-demo.txt.
 
-The separate client screenshot of `202 Accepted` with a JSON job_id is not among
-the supplied images; server logs are not a replacement for that response view.
-screenshots/README.md provides the precise curl command for optional image 06.
+The direct client response is now included as screenshots/06_job_202_accepted.png:
+HTTP 202, job_id b7f05fec-004f-47d5-8607-9be4a7df6318 and status queued.
+It closes the earlier client-response evidence gap; no synthetic output is used.
 
 To rebuild the PDF and matching editable DOCX (optional authoring dependencies):
 ```sh
@@ -110,8 +111,8 @@ python tools/build_report.py
 ```
 On macOS, the builder embeds Times New Roman from system Supplemental fonts.
 On another platform, pass `--font-dir` with those font files. By default the DOCX
-is written beside the repository, outside the submission ZIP. Both versions use
-the same text and the five unchanged images. Main text is 14 pt, captions 10 pt;
+is written beside the repository, outside the submission ZIP. Both report versions use
+the same text and images 01-05; image 06 is supplied separately in the ZIP. Main text is 14 pt, captions 10 pt;
 full-resolution screenshots are supplied for closer inspection of long JSON.
 
 ## Limitations and provenance
