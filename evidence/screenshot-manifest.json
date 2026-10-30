@@ -1,0 +1,32 @@
+[
+  {
+    "file": "screenshots/01_rest_api_200_400_404.png",
+    "original_filename": "Изображение ChatGPT 30 окт. 2026 г., 13_30_18.png",
+    "sha256": "c0854dad3e1e3d3dc06951daa68284880295c59c687bcb41438b411a498c8fc4",
+    "source": "User-supplied terminal capture; content unchanged"
+  },
+  {
+    "file": "screenshots/02_job_queued.png",
+    "original_filename": "Изображение ChatGPT 30 окт. 2026 г., 13_30_29.png",
+    "sha256": "a299f24d7e9c590472012916a2d197186997dc4171dccb01d17b683d2e70b932",
+    "source": "User-supplied terminal capture; content unchanged"
+  },
+  {
+    "file": "screenshots/03_api_logs.png",
+    "original_filename": "Изображение ChatGPT 30 окт. 2026 г., 13_30_36.png",
+    "sha256": "91bf77767d9114196ecd0d1a8f3f6848ff468979582c374962caf110de9bac2e",
+    "source": "User-supplied terminal capture; content unchanged"
+  },
+  {
+    "file": "screenshots/04_job_completed.png",
+    "original_filename": "Изображение ChatGPT 30 окт. 2026 г., 13_30_44.png",
+    "sha256": "ec192499a8bc62520e62ec97b04060af2a716150255b1f9c76bca15706e0e07c",
+    "source": "User-supplied terminal capture; content unchanged"
+  },
+  {
+    "file": "screenshots/05_pytest_41_passed.png",
+    "original_filename": "Изображение ChatGPT 30 окт. 2026 г., 13_30_54.png",
+    "sha256": "8125b80e4de5658b2d930289b517c6ebc0ce457298a08950e15b60eaa7e32375",
+    "source": "User-supplied terminal capture; content unchanged"
+  }
+]

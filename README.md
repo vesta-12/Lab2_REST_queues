@@ -88,13 +88,31 @@ seconds, validates results and sends SIGTERM (exit 0). Nothing remains running.
 Flask test-client measurement, not a network or production benchmark.
 
 ## Evidence and screenshots
-Actual output: evidence/pytest.txt, evidence/http-demo.txt, evidence/metrics.json.
-No terminal screenshots are included: the authoring environment denied native
-Terminal control. Logs are not presented as screenshots. `screenshots/README.md`
-lists the exact genuine captures to take yourself. The report includes a labelled
-architecture illustration and a table of actual results, not fabricated captures.
-To record a full reproducible terminal run on macOS, optionally use
-`script evidence/manual-session.txt`, perform the commands above, then `exit`.
+Five student-supplied terminal screenshots from 30 October 2026 are included in
+screenshots/ and in the two-page report.pdf. Images were copied without editing;
+source names and hashes are recorded in evidence/screenshot-manifest.json.
+They show REST success/errors, the same UUID queued and done, Flask request logs
+(including POST /jobs 202), and 41 passed in 30.36s on the student's machine.
+
+The final independent rerun in evidence/pytest.txt reports 41 passed in 30.34s,
+0 failed. Current NFR values are in evidence/metrics.json. The earlier run remains
+in evidence/pytest-initial.txt and evidence/metrics-initial.json. Actual network
+experiment output remains in evidence/http-demo.txt.
+
+The separate client screenshot of `202 Accepted` with a JSON job_id is not among
+the supplied images; server logs are not a replacement for that response view.
+screenshots/README.md provides the precise curl command for optional image 06.
+
+To rebuild the PDF and matching editable DOCX (optional authoring dependencies):
+```sh
+python -m pip install -r requirements-report.txt
+python tools/build_report.py
+```
+On macOS, the builder embeds Times New Roman from system Supplemental fonts.
+On another platform, pass `--font-dir` with those font files. By default the DOCX
+is written beside the repository, outside the submission ZIP. Both versions use
+the same text and the five unchanged images. Main text is 14 pt, captions 10 pt;
+full-resolution screenshots are supplied for closer inspection of long JSON.
 
 ## Limitations and provenance
 One trusted local host, one worker, no TLS/authentication, no distributed queue,
@@ -118,3 +136,10 @@ README.md, report.pdf, tests/, screenshots/, evidence/, and tools/.
 legacy architecture, credentials or Lab 3 files are included. The original Lab 2
 and old report remain available in Git history. main and lab3-docker-kubernetes
 are unchanged. See AUDIT.md for rubric evidence and remaining manual checks.
+
+To rebuild the checked submission archive after committing materials:
+```sh
+python tools/package_submission.py
+```
+The packager takes tracked files only, validates the new archive, and atomically
+replaces the previous ZIP after all checks succeed.

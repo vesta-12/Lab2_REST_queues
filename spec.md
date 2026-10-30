@@ -127,6 +127,9 @@ TLS, authorization, storage quotas, automatic retention, or exactly-once effects
 | NFR2/NFR3 | persistence and worker restart | test_stopped_worker_persistence | evidence/metrics.json |
 | NFR4 | result-before-ACK, recovery | test_recovery, test_result_before_ack | evidence/pytest.txt |
 
-Screenshots, if available, must be genuine captures. Logs are evidence, not
-screenshots. Any unavailable GUI captures must be listed honestly in the README
-and report. Tests and final audit will report actual outcomes after execution.
+Five student-supplied terminal captures are now included unchanged in screenshots/
+and report.pdf. Source names and hashes are in evidence/screenshot-manifest.json.
+Image 03 shows server-side POST /jobs 202; a direct client 202 response screenshot
+is not supplied. Logs remain separate evidence, not substitutes for screenshots.
+The final rerun and current measured NFR values are in evidence/pytest.txt and
+evidence/metrics.json.

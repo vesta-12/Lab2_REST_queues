@@ -1,33 +1,50 @@
-# Lab 2 remediation audit
+# Final Lab 2 submission audit
 
-| Criterion | Weight | Verified evidence | Remaining limits |
+| Criterion | Maximum | Confirmed evidence | Limits / remaining action |
 |---|---:|---|---|
-| ABET PI 1.2 specification | 10 | spec.md: R1-R9, typed API/internal schemas, examples, four measured NFRs, assumptions/risks, traceability; c4772f7 precedes implementation | Original c5837d7 did not demonstrate spec-first; no retroactive claim |
-| REST API | 6 | Four endpoints; real HTTP 200/202/400/404; tests validate types, UUID, limits, storage errors | Local educational service, no production claim |
-| Queue and worker | 6 | File persistence; deterministic result; processing/done; atomic writes; result-before-ACK; crash recovery; worker lock; corrupt records; SIGTERM | Local POSIX and single worker only; arbitrary power loss not tested |
-| Report | 3 | Two-page report.pdf; actual outcomes, metrics, labelled architecture illustration, reflection | Genuine terminal screenshots still require manual capture; logs are supplied instead |
-| Reproducibility | supporting | Fresh venv dependency installation; 41 passed, 0 failed; actual HTTP experiment; ZIP inspected | Student should repeat on their own machine and perform oral defence |
+| ABET PI 1.2 Specification | 10 | spec.md: R1-R9, typed contracts, internal format, limits, four measurable NFRs, risks, traceability; specification commit before remediation implementation | Original c5837d7 saved spec/code together; no retroactive chronology claim |
+| REST API | 6 | Four endpoints; 202 + UUID; status/result; 200/400/404 captured; boundary and error tests pass | Direct client screenshot of 202 with JSON is not supplied; Flask log 202 is labelled accurately |
+| Queue and Worker | 6 | Persistence, processing/done/failed, FIFO, lock, atomic write, result-before-ACK, killed-process recovery, corruption handling | One local POSIX host and one worker; not a distributed or hardware-failure guarantee |
+| Report and Evidence | 3 | Two-page Times New Roman report; 14 pt body; five unchanged user-supplied screenshots with captions; real logs, metrics, reflection and Codex disclosure | Optional sixth capture of client-side 202 + job_id would strengthen evidence; no full-credit guarantee |
+| TOTAL | 25 | Complete runnable package with measured evidence; assessment remains the teacher's decision | No automatic 25/25 claim |
 
-## Actual measurements
-See evidence/metrics.json for unrounded values. In this run:
-- 100 sequential 32-character submissions: test-client p95 0.553 ms (target <1 s).
-- 10 queued jobs persisted for 30.012 s without worker (target >=30 s).
-- 10/10 resumed correctly in 0.0172 s (target <10 s).
-- 41 tests passed, 0 failed; actual output in evidence/pytest.txt.
-- Independent HTTP demo: 3/3 jobs queued for 30 s, then completed; worker SIGTERM exit 0.
+## Final executed checks
+- Final rerun: **41 passed in 30.34s, 0 failed**, evidence/pytest.txt.
+- 10/10 jobs retained without worker for 30.016 seconds.
+- 10/10 resumed with correct results in 0.0228 seconds (<10 s target).
+- 100 sequential 32-character test-client submissions: p95 0.606 ms (<1 s target).
+- Current unrounded values: evidence/metrics.json; prior run preserved separately.
+- Student screenshot: **41 passed in 30.36s**; a separate run, not edited to match.
+- Original actual network experiment: 3 jobs retained for 30 seconds, processed
+  by independent worker, graceful SIGTERM exit 0 (evidence/http-demo.txt).
+- Tests cover a killed process after claim, failure before ACK, storage-write
+  failure, corrupt records, FIFO, worker exclusion and input boundaries.
 
-## Honest Git sequence
-1. c4772f7: updated specification only.
-2. 8652cab: API, durable file queue and worker implementation.
-3. Subsequent commit: reproducible tests, documentation, evidence and report.
-Original c5837d7 and Lab 3 commits remain reachable; main and Lab 3 still point
-to dcb4740ad6f6a310008d73a1f23be98b7cc7e04c.
+## Screenshot verification
+Five supplied images copied without content edits. SHA-256 checks against source
+files passed. Queued/done images show the same UUID
+5d445131-c6c0-4d87-9cc8-ec022e2921a1 and correct result. Flask image shows POST
+/jobs 202; it is not described as a client response or proof of its JSON body.
+No image 06 exists. Exact command for that optional capture is in screenshots/README.md.
 
-## Defence checklist
-Explain HTTP 202 versus completed work; poll the UUID; distinguish public API
-from internal messages; stop/restart worker; show persisted result and recovery;
-explain FIFO ties, at-least-once execution, idempotency and ACK ordering. Review
-Codex-assisted code before submission. Capture the five images listed in
-screenshots/README.md and add genuine evidence to the report if required.
-The work targets the full rubric; 25/25 is not guaranteed and screenshot-related
-credit is not asserted as complete.
+## Report and package verification
+PDF and editable DOCX use the same text and images. Both have two visually
+inspected pages, without synthetic diagrams, clipped captions or title rules.
+Images retain their full pixel detail; full-size originals are also in the ZIP.
+The editable DOCX is beside the ZIP, excluded from the submission archive.
+Archive validation checks CRC, duplicate paths, required files, source equality,
+and absence of Git metadata, environments, secrets, caches, runtime queues and
+Lab 3/5 content. tools/package_submission.py reproduces these checks.
+
+## History and scope
+c4772f7: specification only; 8652cab: implementation; 7be01cd: tests, documentation,
+evidence and first report. Final documentation/evidence commit follows them.
+No application, worker, storage, test or dependency-runtime code was changed for
+final packaging. main and lab3-docker-kubernetes remain at
+ dcb4740ad6f6a310008d73a1f23be98b7cc7e04c.
+
+## Defence
+Explain acceptance versus completion, the queued/done UUID, worker stop/restart,
+ACK ordering, persistence, FIFO ties and at-least-once idempotent replay. If the
+teacher requires a direct response screenshot, capture 06 using the supplied
+command; five real screenshots and all executable evidence are already supplied.

@@ -48,4 +48,4 @@ tests/test_lab2.py::test_api_latency PASSED                              [ 95%]
 tests/test_lab2.py::test_json_method_error PASSED                        [ 97%]
 tests/test_lab2.py::test_write_metrics PASSED                            [100%]
 
-============================= 41 passed in 31.44s ==============================
+============================= 41 passed in 30.34s ==============================

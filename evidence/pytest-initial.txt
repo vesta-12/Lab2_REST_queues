@@ -1,0 +1,51 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.9.6, pytest-8.4.2, pluggy-1.6.0 -- /Users/sofiyaserbina/Documents/ChatGPT/Лабораторки/Lab3_Docker_Kubernetes/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /Users/sofiyaserbina/Documents/ChatGPT/Лабораторки/Lab3_Docker_Kubernetes
+configfile: pytest.ini
+testpaths: tests
+collecting ... collected 41 items
+
+tests/test_lab2.py::test_time PASSED                                     [  2%]
+tests/test_lab2.py::test_echo PASSED                                     [  4%]
+tests/test_lab2.py::test_invalid_body[body0-/echo] PASSED                [  7%]
+tests/test_lab2.py::test_invalid_body[body0-/jobs] PASSED                [  9%]
+tests/test_lab2.py::test_invalid_body[body1-/echo] PASSED                [ 12%]
+tests/test_lab2.py::test_invalid_body[body1-/jobs] PASSED                [ 14%]
+tests/test_lab2.py::test_invalid_body[body2-/echo] PASSED                [ 17%]
+tests/test_lab2.py::test_invalid_body[body2-/jobs] PASSED                [ 19%]
+tests/test_lab2.py::test_invalid_body[body3-/echo] PASSED                [ 21%]
+tests/test_lab2.py::test_invalid_body[body3-/jobs] PASSED                [ 24%]
+tests/test_lab2.py::test_invalid_body[body4-/echo] PASSED                [ 26%]
+tests/test_lab2.py::test_invalid_body[body4-/jobs] PASSED                [ 29%]
+tests/test_lab2.py::test_invalid_body[body5-/echo] PASSED                [ 31%]
+tests/test_lab2.py::test_invalid_body[body5-/jobs] PASSED                [ 34%]
+tests/test_lab2.py::test_invalid_body[body6-/echo] PASSED                [ 36%]
+tests/test_lab2.py::test_invalid_body[body6-/jobs] PASSED                [ 39%]
+tests/test_lab2.py::test_invalid_body[None-/echo] PASSED                 [ 41%]
+tests/test_lab2.py::test_invalid_body[None-/jobs] PASSED                 [ 43%]
+tests/test_lab2.py::test_invalid_body[body8-/echo] PASSED                [ 46%]
+tests/test_lab2.py::test_invalid_body[body8-/jobs] PASSED                [ 48%]
+tests/test_lab2.py::test_invalid_json[/echo] PASSED                      [ 51%]
+tests/test_lab2.py::test_invalid_json[/jobs] PASSED                      [ 53%]
+tests/test_lab2.py::test_submit PASSED                                   [ 56%]
+tests/test_lab2.py::test_lifecycle PASSED                                [ 58%]
+tests/test_lab2.py::test_unknown PASSED                                  [ 60%]
+tests/test_lab2.py::test_limits PASSED                                   [ 63%]
+tests/test_lab2.py::test_storage_error PASSED                            [ 65%]
+tests/test_lab2.py::test_stopped_worker_persistence PASSED               [ 68%]
+tests/test_lab2.py::test_recovery PASSED                                 [ 70%]
+tests/test_lab2.py::test_result_before_ack PASSED                        [ 73%]
+tests/test_lab2.py::test_corrupt[{broken] PASSED                         [ 75%]
+tests/test_lab2.py::test_corrupt[[]] PASSED                              [ 78%]
+tests/test_lab2.py::test_corrupt[{}] PASSED                              [ 80%]
+tests/test_lab2.py::test_corrupt[{"payload":null}] PASSED                [ 82%]
+tests/test_lab2.py::test_worker_lock PASSED                              [ 85%]
+tests/test_lab2.py::test_failed_task PASSED                              [ 87%]
+tests/test_lab2.py::test_fifo PASSED                                     [ 90%]
+tests/test_lab2.py::test_atomic_failure PASSED                           [ 92%]
+tests/test_lab2.py::test_api_latency PASSED                              [ 95%]
+tests/test_lab2.py::test_json_method_error PASSED                        [ 97%]
+tests/test_lab2.py::test_write_metrics PASSED                            [100%]
+
+============================= 41 passed in 31.44s ==============================
