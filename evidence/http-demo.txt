@@ -1,0 +1,46 @@
+Actual loopback experiment 2026-10-30T08:03:35.354167+00:00
+127.0.0.1 - - [30/Oct/2026 13:03:35] "GET /time HTTP/1.1" 200 -
+GET /time -> HTTP 200 {"server_time": "2026-10-30T08:03:35.357510+00:00"}
+127.0.0.1 - - [30/Oct/2026 13:03:35] "POST /echo HTTP/1.1" 200 -
+POST /echo -> HTTP 200 {"message": "Hello queue"}
+127.0.0.1 - - [30/Oct/2026 13:03:35] "[31m[1mPOST /echo HTTP/1.1[0m" 400 -
+POST /echo -> HTTP 400 {"error": "message must be a non-blank string of 1..4096 characters"}
+127.0.0.1 - - [30/Oct/2026 13:03:35] "[33mGET /jobs/unknown HTTP/1.1[0m" 404 -
+GET /jobs/unknown -> HTTP 404 {"error": "job not found"}
+127.0.0.1 - - [30/Oct/2026 13:03:35] "[35m[1mPOST /jobs HTTP/1.1[0m" 202 -
+POST /jobs -> HTTP 202 {"job_id": "7c53176a-152b-47d7-9d55-54be21239222", "status": "queued"}
+127.0.0.1 - - [30/Oct/2026 13:03:35] "GET /jobs/7c53176a-152b-47d7-9d55-54be21239222 HTTP/1.1" 200 -
+GET /jobs/7c53176a-152b-47d7-9d55-54be21239222 -> HTTP 200 {"created_at": "2026-10-30T08:03:35.360162+00:00", "job_id": "7c53176a-152b-47d7-9d55-54be21239222", "payload": {"message": "Hello queue 0"}, "status": "queued", "task_type": "text_analysis"}
+127.0.0.1 - - [30/Oct/2026 13:03:35] "[35m[1mPOST /jobs HTTP/1.1[0m" 202 -
+POST /jobs -> HTTP 202 {"job_id": "7e130f99-db6f-48d7-8589-0f631374ca8f", "status": "queued"}
+127.0.0.1 - - [30/Oct/2026 13:03:35] "GET /jobs/7e130f99-db6f-48d7-8589-0f631374ca8f HTTP/1.1" 200 -
+GET /jobs/7e130f99-db6f-48d7-8589-0f631374ca8f -> HTTP 200 {"created_at": "2026-10-30T08:03:35.361638+00:00", "job_id": "7e130f99-db6f-48d7-8589-0f631374ca8f", "payload": {"message": "Hello queue 1"}, "status": "queued", "task_type": "text_analysis"}
+127.0.0.1 - - [30/Oct/2026 13:03:35] "[35m[1mPOST /jobs HTTP/1.1[0m" 202 -
+POST /jobs -> HTTP 202 {"job_id": "4d091c52-c888-4e88-9c6a-b485b1bb81f8", "status": "queued"}
+127.0.0.1 - - [30/Oct/2026 13:03:35] "GET /jobs/4d091c52-c888-4e88-9c6a-b485b1bb81f8 HTTP/1.1" 200 -
+GET /jobs/4d091c52-c888-4e88-9c6a-b485b1bb81f8 -> HTTP 200 {"created_at": "2026-10-30T08:03:35.362925+00:00", "job_id": "4d091c52-c888-4e88-9c6a-b485b1bb81f8", "payload": {"message": "Hello queue 2"}, "status": "queued", "task_type": "text_analysis"}
+Worker is not running; waiting 30 seconds
+127.0.0.1 - - [30/Oct/2026 13:04:05] "GET /jobs/7c53176a-152b-47d7-9d55-54be21239222 HTTP/1.1" 200 -
+GET /jobs/7c53176a-152b-47d7-9d55-54be21239222 -> HTTP 200 {"created_at": "2026-10-30T08:03:35.360162+00:00", "job_id": "7c53176a-152b-47d7-9d55-54be21239222", "payload": {"message": "Hello queue 0"}, "status": "queued", "task_type": "text_analysis"}
+127.0.0.1 - - [30/Oct/2026 13:04:05] "GET /jobs/7e130f99-db6f-48d7-8589-0f631374ca8f HTTP/1.1" 200 -
+GET /jobs/7e130f99-db6f-48d7-8589-0f631374ca8f -> HTTP 200 {"created_at": "2026-10-30T08:03:35.361638+00:00", "job_id": "7e130f99-db6f-48d7-8589-0f631374ca8f", "payload": {"message": "Hello queue 1"}, "status": "queued", "task_type": "text_analysis"}
+127.0.0.1 - - [30/Oct/2026 13:04:05] "GET /jobs/4d091c52-c888-4e88-9c6a-b485b1bb81f8 HTTP/1.1" 200 -
+GET /jobs/4d091c52-c888-4e88-9c6a-b485b1bb81f8 -> HTTP 200 {"created_at": "2026-10-30T08:03:35.362925+00:00", "job_id": "4d091c52-c888-4e88-9c6a-b485b1bb81f8", "payload": {"message": "Hello queue 2"}, "status": "queued", "task_type": "text_analysis"}
+Starting an independent worker process
+127.0.0.1 - - [30/Oct/2026 13:04:05] "GET /jobs/7c53176a-152b-47d7-9d55-54be21239222 HTTP/1.1" 200 -
+GET /jobs/7c53176a-152b-47d7-9d55-54be21239222 -> HTTP 200 {"created_at": "2026-10-30T08:03:35.360162+00:00", "job_id": "7c53176a-152b-47d7-9d55-54be21239222", "payload": {"message": "Hello queue 0"}, "status": "queued", "task_type": "text_analysis"}
+127.0.0.1 - - [30/Oct/2026 13:04:05] "GET /jobs/7c53176a-152b-47d7-9d55-54be21239222 HTTP/1.1" 200 -
+GET /jobs/7c53176a-152b-47d7-9d55-54be21239222 -> HTTP 200 {"created_at": "2026-10-30T08:03:35.360162+00:00", "finished_at": "2026-10-30T08:04:05.433685+00:00", "job_id": "7c53176a-152b-47d7-9d55-54be21239222", "payload": {"message": "Hello queue 0"}, "result": {"character_count": 13, "uppercase": "HELLO QUEUE 0", "word_count": 3}, "started_at": "2026-10-30T08:04:05.433186+00:00", "status": "done", "task_type": "text_analysis"}
+127.0.0.1 - - [30/Oct/2026 13:04:05] "GET /jobs/7e130f99-db6f-48d7-8589-0f631374ca8f HTTP/1.1" 200 -
+GET /jobs/7e130f99-db6f-48d7-8589-0f631374ca8f -> HTTP 200 {"created_at": "2026-10-30T08:03:35.361638+00:00", "finished_at": "2026-10-30T08:04:05.434590+00:00", "job_id": "7e130f99-db6f-48d7-8589-0f631374ca8f", "payload": {"message": "Hello queue 1"}, "result": {"character_count": 13, "uppercase": "HELLO QUEUE 1", "word_count": 3}, "started_at": "2026-10-30T08:04:05.434300+00:00", "status": "done", "task_type": "text_analysis"}
+127.0.0.1 - - [30/Oct/2026 13:04:05] "GET /jobs/4d091c52-c888-4e88-9c6a-b485b1bb81f8 HTTP/1.1" 200 -
+GET /jobs/4d091c52-c888-4e88-9c6a-b485b1bb81f8 -> HTTP 200 {"created_at": "2026-10-30T08:03:35.362925+00:00", "finished_at": "2026-10-30T08:04:05.435485+00:00", "job_id": "4d091c52-c888-4e88-9c6a-b485b1bb81f8", "payload": {"message": "Hello queue 2"}, "result": {"character_count": 13, "uppercase": "HELLO QUEUE 2", "word_count": 3}, "started_at": "2026-10-30T08:04:05.435223+00:00", "status": "done", "task_type": "text_analysis"}
+Worker log:
+7c53176a-152b-47d7-9d55-54be21239222 processing
+7c53176a-152b-47d7-9d55-54be21239222 terminal result saved; acknowledged
+7e130f99-db6f-48d7-8589-0f631374ca8f processing
+7e130f99-db6f-48d7-8589-0f631374ca8f terminal result saved; acknowledged
+4d091c52-c888-4e88-9c6a-b485b1bb81f8 processing
+4d091c52-c888-4e88-9c6a-b485b1bb81f8 terminal result saved; acknowledged
+
+PASS: three tasks persisted for 30 seconds and completed after worker start; SIGTERM exit 0
